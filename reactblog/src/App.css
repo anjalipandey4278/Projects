@@ -1,0 +1,137 @@
+body{
+  background: #eceff1!important;
+}
+
+.page-item.active .page-link{
+  background-color: #121212!important;
+  border-color: #121212!important;
+}
+.wrapper{
+ 
+  width: 85%;
+  margin: auto; 
+  padding: 10px;
+ 
+}
+#cen{
+  margin-top: 20px;
+}
+.post {
+  width: 385px;
+  margin: 0px 25px 40px 25px;
+  display: flex;
+  flex-direction: column;
+}
+#cenn{
+  width: 1000px;
+  padding: 10px;
+  position: absolute;
+  top: 20%;
+  left: 6%;
+  transform: translate(-50,-50);
+
+}
+
+.postImg {
+  width: 385px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.postInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.postCat {
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: #be9656;
+  line-height: 19px;
+  margin-top: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.postTitle {
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.postDate {
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+  margin-top: 15px;
+}
+
+.postDesc {
+  font-family: "Varela Round", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #444444;
+  margin-top: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+#like{
+ border: none;
+  position: absolute;
+  top: 22%;
+  left: 90%;
+  transform: translate(-50 ,-50);
+ 
+  align-items: center;
+ 
+}
+#pen{
+ 
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+ right: 44%;
+  transform: translate(-50 ,-50);
+  align-items: center;
+ background: #ffffff;
+color: #5b71cf;
+ border: none;
+ 
+}
+#penn{
+ 
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 60%;
+ right: 44%;
+  transform: translate(-50 ,-50);
+  align-items: center;
+ background: #ffffff;
+color: #5b71cf;
+ border: none;
+ 
+}
+#del{
+ 
+  width: 30px;
+  height: 30px;
+  align-items: center;
+ background: white;
+color: red;
+ border: none;
+ 
+}

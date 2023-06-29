@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dockerassignment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dockerassignment
+  template:
+    metadata:
+      labels:
+        app: dockerassignment
+    spec:
+      containers:
+        - name: dockerassignment
+          image: anjali786/docker_assignment:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always

@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+#one{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    
+}
+#inside1{
+   
+    width:48%;
+    height: 100%;
+    
+}
+#inside2{
+    width:62%;
+    height: 100%;
+    
+}
+.imagediv{
+    background-image: url("images/trevor-bobyk-_Sfy9ugEp2o-unsplash.jpg");
+    background-size: cover;
+    background-position: right;
+    width: 96%;
+    height: 97%;
+    margin-left: 24px;
+    background-repeat: no-repeat; 
+}
+#overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 7, 7, 0.621);
+}
+.side{
+    position: absolute;
+    top: 75%;
+    left: 12%;
+    transform: translate(-50% , -50%);
+    margin-top: 38px;
+    width: 730px;
+    height: 225px;
+    color: aliceblue;
+    padding-top: 30px;
+    background-color: rgba(0, 6, 14, 0.831)
+}
+.side h3{
+    position: absolute;
+    top: 20%;
+    left: 62%;
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    transform: translate(-50%,-50%);
+
+}
+.side p{
+    position: absolute;
+    top: 50%;
+    left: 62%;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 12px;
+    transform: translate(-50%,-50%);
+    color: rgba(255, 255, 255, 0.664);
+    letter-spacing: 1.8px;
+
+}
+.btn{
+    width: 98px;
+    height: 27px;
+    margin-top: 30px;
+    margin-left: 80%;
+    background-color: transparent;
+    border: 2px solid rgb(1, 45, 116);
+    color:rgb(1, 45, 116);
+    font-size: 11px;
+    font-weight: 600;
+}
+#formdiv{
+    margin: 40px;
+    width:80%;
+    height: 60%;
+    padding: 30px;
+    margin-top: 10px;
+
+
+}
+.heading{
+    color:rgb(1, 45, 116);
+    font-weight: 700; 
+    padding-bottom: 6px;
+    font-size: 32px;
+    margin-top: 40px;
+    margin-left: 75px;
+
+}
+.heading1{
+    color:rgb(1, 45, 116);
+    font-weight: 600; 
+    margin-left: 75px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px ;
+    margin-bottom: 16px;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+  }
+  #formdiv button{
+    width: 100%;
+    background-color: rgb(1, 45, 116);
+    color: white;
+    padding: 10px 20px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+ .formerror{
+    color: rgba(255, 0, 0, 0.925);
+    font-size: 13px;
+    
+ }

@@ -1,0 +1,185 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ProductCommunityWebsite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+            <li *ngIf="!isadmin" class="nav-item">
+                <a class="nav-link" routerLink="/user-dashboard">Home</a>
+              </li>
+              <li  class="nav-item">
+                <a class="nav-link" (click)="toggleData()" >Raise for reviews</a>
+   
+              </li>
+          <li class="nav-item">
+            <a (click)="logout()" class="nav-link" routerLink="/login">Logout</a>
+          </li>
+          <div>
+            
+          </div>
+
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+               <!-- simple form to raise for review  -->
+               <div *ngIf="toDisplay" class="idd" >
+                <form   [formGroup]="reviewraiseForm"  (ngSubmit)="raiseForm()">
+                    <div  *ngIf="showerror">
+                        <h6 class="iddd"  class="text-danger">Product already exist</h6>
+                    
+                        </div>
+              <div class="form-group lu" >
+                <label class="lo" >Product code</label>
+                <input type="number" class="form-control" formControlName="productcode"  placeholder="Enter code">
+              </div>
+              <div class="form-group lu">
+                <label class="lo">Product Brand </label>
+                <input type="text" class="form-control" formControlName="productBrand"  placeholder="Enter Brand">
+              </div>
+              <div class="form-group lu">
+                  <label class="lo" >Product Name</label>
+                  <input type="text" class="form-control" formControlName="productName"  placeholder="Enter Product Name">
+                </div>
+                <div class="lu">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </form>
+            </div>
+
+    <div class="container mt-5 py-5">
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-12 col-xl-10">
+          <div class="card shadow-0 border rounded-3">
+            <div class="card-body">
+              <div *ngFor= "let p of allproduct let indexOfelement=index;" class="row"  >
+                <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                  <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                    <img src="{{p.productimage}}"
+                      class="w-100" />
+                    <a href="#!">
+                      <div class="hover-overlay">
+                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                  <h5>{{p.productName}}</h5>
+                  <div class="d-flex flex-row">
+                    <div class="text-danger mb-1 me-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                       
+                    </div>
+                    <span>10</span>
+                  </div>
+                  <div class="mt-1 mb-0 text-muted small">
+                    <span>100% cotton</span>
+                    <span class="text-primary"> • </span>
+                    <span>Light weight</span>
+                    <span class="text-primary"> • </span>
+                    <span>Best finish<br /></span>
+                  </div>
+                  <div class="mb-2 text-muted small">
+                    <span>Unique design</span>
+                    <span class="text-primary"> • </span>
+                    <span>For men</span>
+                    <span class="text-primary"> • </span>
+                    <span>Casual<br /></span>
+                  </div>
+                  <p class="text-truncate mb-4 mb-md-0">
+                    {{p.productDescription}}
+                  </p>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                  <div class="d-flex flex-row align-items-center mb-1">
+                    <h4 class="mb-1 me-1">{{p.productPrice}}</h4>
+                    
+                  </div>
+                  <h6 class="text-success">Free shipping</h6>
+                  <div class="d-flex flex-column mt-4">
+                   
+                    <button (click)="addreview(indexOfelement)" class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">
+                      Add Review
+                    </button>
+                    <button (click)="productcode(p.id)" class="btn btn-outline-primary btn-sm mt-2"  type="button">
+                        show Product details
+                      </button>
+                    
+                    <!-- <div class="d-flex flex-column mt-2" *ngIf="isadmin">
+                        <button (click)="openPopup()" class="btn btn-danger btn-sm" type="button">View review request</button>
+                    </div> -->
+                    
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+    
+                    <app-footer></app-footer>   
+                        
+                  <!-- Modal -->
+                
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" >Add Reviews</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <form [formGroup]="reviewForm" (ngSubmit)="savereviews()">
+                <div class="row mb-3">
+                  <div class="col-3 col-md-4 text-start">
+                    <label for="" class="form-label">Rating</label>
+                  </div>
+                  <div class="col-9 col-md-8 text-center">
+                    <input  type="number"  oninput="if(value>4) alert('please fill rating btween 1-5')" formControlName="rating" class="form-input m-0 w-100 rounded border-1" required />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-3 col-md-4 text-start">
+                    <label for="" class="form-label">Heading</label>
+                  </div>
+                  <div class="col-9 col-md-8 text-center">
+                    <input  formControlName="heading" type="text" class="form-input m-0 w-100 rounded border-1"  minlength="20" maxlength="400" required />
+                  </div>
+                </div>
+      
+                <div class="row mb-3">
+                  <div class="col-3 col-md-4 text-start">
+                    <label for="Date" class="form-label">Review</label>
+                  </div>
+                  <div class="col-9 col-md-8 text-center">
+                    <input  formControlName="review" type="text"  class="form-input m-0 w-100 rounded border-1" minlength="20" maxlength="400" required  />
+                   
+                  </div>
+                
+                </div>
+        <div class="row mb-3 mt-2">
+                  <div class="col">
+                    <button  type="submit" class="btn btn-primary px-2 mx-2">Submit</button>
+                    <button class="btn btn-danger" type="reset" onclick="">Clear</button>
+                  </div>
+                </div> 
+                
+              </form>
+        </div>
+
+
+       
+ <!-- simple form to raise for review  -->
+ 

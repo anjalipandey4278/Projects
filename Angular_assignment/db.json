@@ -1,0 +1,37 @@
+{
+  "posts": [
+    {
+      "rollnumber": "102",
+      "name": "diksha Pandey",
+      "dob": "2000-08-07",
+      "score": "256",
+      "id": 3
+    },
+    {
+      "rollnumber": "109",
+      "name": "Anjali Pandey",
+      "dob": "2015-06-04",
+      "score": "300",
+      "id": 5
+    }
+  ],
+  "teacherSignup": [
+    {
+      "fullname": "Amit Pandey",
+      "mobile": "7987230889",
+      "email": "amit@gmail.com",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "fullname": "Anjali Dwivedi",
+      "mobile": "7987230889",
+      "email": "anjali@gmail.com",
+      "password": "123456",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,46 @@
+<div class="stuTable">
+<div class="container">
+  <a href="/student/login" class="btn btn-info" style="margin-top:5px; align-items: flex-start;">Back</a>
+  
+  <div class="container">
+      <div class="row" >
+          <div class="col-md-6 offset-md-3" ><%
+            const date = new Date(gett.dob);
+                                const a = new Intl.DateTimeFormat('en-GB', {
+                                year: 'numeric', month: 'numeric', day: 'numeric',
+                                    }).format(date);
+            %>
+              <div class="card shadow-lg">
+                  <div class="card-body">
+                      <div class="card-title text-center"> <strong>Result of: <%= gett.name %></strong></div>
+                      <div class="row">
+                          <label for="roll" class="col-sm-5 col-form-label"><b> Roll :</b></label>
+                          <div class="col-sm-7 p-2">
+                              <p><%= gett.roll %></p>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <label for="name" class="col-sm-5 col-form-label"><b>Name :</b></label>
+                          <div class="col-sm-7 p-2">
+                              <p><%= gett.name %></p>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <label for="dob" class="col-sm-5 col-form-label"><b>Date of Birth :</b> </label>
+                          <div class="col-sm-7  p-2">
+                              <p><%= a %></p>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <label for="score" class="col-sm-5 col-form-label"><b>Score :</b></label>
+                          <div class="col-sm-7 p-2">
+                              <p><%= gett.score %></p>
+                          </div>
+                      </div>
+                     
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

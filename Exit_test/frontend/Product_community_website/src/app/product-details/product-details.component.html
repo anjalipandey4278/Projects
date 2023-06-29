@@ -1,0 +1,142 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ProductCommunityWebsite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+            <li *ngIf="!isadmin" class="nav-item">
+                <a class="nav-link" routerLink="/user-dashboard">Home</a>
+              </li>
+              <li *ngIf="isadmin" class="nav-item">
+                <a class="nav-link" routerLink="/user-dashboard">View new reviews</a>
+              </li>
+          <li class="nav-item">
+            <a (click)="logout()" class="nav-link" routerLink="/login">Logout</a>
+          </li>
+          <div>
+            
+          </div>
+
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container mt-5 py-5">
+      <div class="row justify-content-center mb-3">
+        <div class="col-md-12 col-xl-10">
+          <div class="card shadow-0 border rounded-3">
+            <div class="card-body">
+              <div  class="row"  >
+                <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                  <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                    <img src="{{productdetails.productimage}}"
+                      class="w-100" />
+                    <a href="#!">
+                      <div class="hover-overlay">
+                        <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <h5>{{productdetails.productName}}</h5>
+                  
+                  <div  class="d-flex flex-row">
+                    <div *ngFor="let a of counter(avgRating)"  class="text-danger mb-1 me-2">
+                        <i class="bi bi-star-fill"></i>
+                        
+                    </div>
+                    <span>{{aprovedreviews.length}}</span>
+                  </div>
+                  <div class="mt-1 mb-0 text-muted small">
+                    <span>100% cotton</span>
+                    <span class="text-primary"> • </span>
+                    <span>Light weight</span>
+                    <span class="text-primary"> • </span>
+                    <span>Best finish<br /></span>
+                  </div>
+                  <div class="mb-2 text-muted small">
+                    <span>Unique design</span>
+                    <span class="text-primary"> • </span>
+                    <span>For men</span>
+                    <span class="text-primary"> • </span>
+                    <span>Casual<br /></span>
+                  </div>
+                  <p class="text-truncate mb-4 mb-md-0">
+                    {{productdetails.productDescription}}
+                  </p>
+                </div>
+                <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                  <div class="d-flex flex-row align-items-center mb-1">
+                    <h4 class="mb-1 me-1">{{productdetails.productPrice}}</h4>
+                    
+                  </div>
+                  <h6 class="text-success">Free shipping</h6>
+                  <div class="d-flex flex-column mt-4">
+                   <button  class="btn btn-outline-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">
+                        show reviews
+                      </button>
+                    
+                    
+
+                    <!-- <div class="d-flex flex-column mt-2" *ngIf="isadmin">
+                        <button (click)="openPopup()" class="btn btn-danger btn-sm" type="button">View review request</button>
+                    </div> -->
+                    <!-- Trigger the modal with a button -->
+
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+                 
+                    <app-footer></app-footer>   
+                        
+                  <!-- Modal 1 -->
+                
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" >All Reviews</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+       
+        <div class="modal-body">
+
+            <div *ngIf="isadmin">
+                <div *ngFor="let r of notaprovedreviews let indexOfelement=index; " class="row mb-3">
+                    <div class="pcc">
+                    <div  class="text-start">
+                      <h6 for="" class="form-label">{{r.review}}</h6>
+                      <div >
+                      <button (click)="approvereview(indexOfelement)"  type="submit" class="btn btn-primary btn-sm px-2 mx-2">approve</button>
+                      <button (click)="declinereview(indexOfelement)" class="btn btn-danger btn-sm"  type="reset" >decline</button>
+                      </div>
+                    </div>   
+                
+                </div>
+            </div>
+
+    </div>
+         <div *ngIf="!isadmin">
+            <div *ngFor="let g of aprovedreviews " class="row mb-3">
+                <div class="text-start">
+                  <p  class="form-label">{{g.review}}</p>
+                
+                </div>
+        </div>
+         </div>   
+        </div>
+ 
+    
+ 

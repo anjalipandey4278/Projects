@@ -1,0 +1,38 @@
+<button class="btn bg-primary" style=" margin-left: 900px; margin-top:35px;">
+  <a href="/teacher/add" style="color: azure;  ">Add Student</a>
+</button>
+<h4 >All Students</h4>
+
+<div class="tableDiv">
+  <p style="font-weight: 600; font-size: medium; margin-left: 30px; ">Total <%= student.length %> Students</p>
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th scope="col">Roll Number</th>
+        <th scope="col">Name</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Score</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        <%  student.forEach(element => {
+          const date = new Date(element.dob);
+          const a = new Intl.DateTimeFormat('en-GB', {
+          year: 'numeric', month: 'numeric', day: 'numeric',
+              }).format(date); %>
+            <tr class="head">
+                <td><%= element.roll %></td>
+                <td><%= element.name %></td>               
+                <td><%= a %></td>
+                <td><%= element.score %></td> 
+                <td>
+                  <a href="/teacher/edit/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/material-outlined/30/000000/edit.png"/></a>
+                  <a href="/teacher/delete/<%= element._id %> "><img style="margin: 0px 5px;" src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"/></a>
+                </td>
+              </tr>
+        <%}) %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,48 @@
+
+
+<div style="margin-top: 30px; margin-left: 10px;">
+  <a href="/" ><button type="button" class="btn btn-warning"> Back</button></a>
+</div>
+<h3 class=" mb-1" style="align-items: center;">Search Your Result</h3><br>
+<% if(locals.error) { %>
+  <div class="alert alert-danger" style="text-align: center;" role="alert"><%= error %></div>
+  <% } %>
+<div class="row py-1 mt-4">
+   
+    <div class="teachLog">
+    <div class="col-md-6 offset-md-3">
+        <fieldset class="form-group border p-3">
+          <form method="POST" class="teachForm">
+                <div class="row mb-3">
+                    <div class="col-3 col-md-4 text-start">
+                        <label for="" class="form-label">Roll Number</label>
+                    </div>
+                    <div class="col-9 col-md-8 text-center">
+                        <input type="number" class="form-input m-0 w-100 rounded border-1" name="roll"
+                            required placeholder="Roll Number" />
+                            
+
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3 col-md-4 text-start">
+                        <label for="" class="form-label">Date of Birth</label>
+                    </div>
+                    <div class="col-9 col-md-8 text-center">
+                        <input type="date" class="form-input m-0 w-100 rounded border-1" name="dob"
+                            required placeholder="DOB" />
+                            
+                    </div>
+                </div>
+                <div class="row mb-3 mt-2">
+                    <div class="col align-self-center" style="align-items: center;">
+                      <a><button type="submit" class="btn btn-primary" >Submit</button></a>
+                    </div>
+                </div>
+            </form>
+
+        </fieldset>
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,32 @@
+.carousel-item {
+    height: 65vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  #icons{
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px 0;
+    
+  
+  }
+i{
+    margin-right: 5px;
+}
+ p{
+    margin-left: -73px;
+    font-size: 18px;
+ }
+ .ti{
+    margin-right: -34px;
+    font-size: 25px;
+ }
+ h4{
+    margin-left: -35px;
+ }

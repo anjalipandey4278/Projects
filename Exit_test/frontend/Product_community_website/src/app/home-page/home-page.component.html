@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">ProductCommunityWebsite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"routerLink="/registration">Register</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <header>
+  
+    
+      <div class="carousel-inner">
+        <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/RCAhiGJsUUE/1920x1080')">
+          <div class="carousel-caption">
+            <h4>The Community</h4>
+            <p>Find solutions share ideas . Ask question connect with people across the world.</p>
+            <p>Ask question connect with people across the world.</p>
+          </div>
+        </div>
+        
+      </div>
+    
+    
+  </header>
+  
+  <!-- Page Content -->
+  <section class="py-5">
+    <div class="container">
+        <div id="icons">
+            <i class="bi bi-people ti"></i>
+        <div class="icons1"><h4 >{{membercount}}</h4>
+          
+            <p >Members</p></div>
+            <i class="bi bi-images ti"></i>
+      <div class="icons1"><h4 >{{productcount}}</h4>
+        
+        <p >Post</p>
+    </div>
+    <i class="bi bi-person-circle ti"></i>
+      <div class="icons1"><h4  >{{onlineusercount}}</h4>
+     
+      <p >OnlineUsers</p>
+    </div>
+    </div>
+   </div>
+  </section>
+  <app-footer></app-footer>
+   

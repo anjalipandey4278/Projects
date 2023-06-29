@@ -1,0 +1,59 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+.carousel-item {
+    height: 56vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  #icons{
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px 0;
+    
+  
+  }
+i{
+    margin-right: 5px;
+}
+ p{
+    font-size: 20px;
+ }
+ .idd{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+    width: 500px;
+    height: 320px;
+    background-color: rgb(249, 249, 249);
+    margin-top: 100px;
+ }
+ .lu{
+    padding: 6px;
+ }
+ .lo{
+    padding: 2px;
+ } 
+ .iddd{
+
+    align-items: center;
+    font-size: 10px;
+ 
+ }
+ .crop {
+    overflow: hidden;
+  }

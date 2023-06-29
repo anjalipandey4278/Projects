@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        
+        <div class="card my-4">
+            <h2 class="text-center text-dark mt-1">Registration</h2>
+          <form  [formGroup]="registerForm" (ngSubmit)="registerUser()"  class="card-body cardbody-color p-lg-2">
+
+            <div class="text-center">
+                <img src="https://www.pngall.com/wp-content/uploads/5/Profile-Male-PNG.png" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                  width="200px" alt="profile">
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control"  aria-describedby="emailHelp"
+                  placeholder="First Name" formControlName="firstName" [ngClass]="{'is-invalid' : submitted && registerForm.controls['firstName'].errors}">
+                  <div class="alert alert-danger" *ngIf=" submitted && registerForm.controls['firstName'].errors">Name is required and  Atleast 4 characters required and no special character allowed.      </div> 
+              </div>
+              <div class="mb-3">
+                <input type="text" class="form-control"  aria-describedby="emailHelp"
+                  placeholder="Last Name" formControlName="lastName" [ngClass]="{'is-invalid' : submitted && registerForm.controls['lastName'].errors}">
+                  <div class="alert alert-danger" *ngIf=" submitted && registerForm.controls['lastName'].errors">Name is required and  Atleast 4 characters required and no special character allowed.      </div> 
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Email" formControlName="email" [ngClass]="{'is-invalid' : submitted && registerForm.controls['email'].errors}"></div>
+                <div class="alert alert-danger" *ngIf=" submitted && registerForm.controls['email'].errors">email is required and email must be in correct formate      </div> 
+              <div class="mb-3" >
+                <input type="password" class="form-control" #pw placeholder="password" formControlName="password" [ngClass]="{'is-invalid' : submitted && registerForm.controls['password'].errors}" >
+                <div class="alert alert-danger" *ngIf=" submitted && registerForm.controls['firstName'].errors">password is required and  Atleast 8 characters required one in upprcase one in lower case and one in number and one in special case     </div> 
+                <span class="text-danger" *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required', 'password')">*Password is required</span>
+              </div>
+             
+     
+              <div class="mb-3">
+                <input type="password" class="form-control" id="password" placeholder="confirm password"  [ngClass]='confirmPasswordClass' formControlName="confirmPassword"
+                #cpw (keyup)='checkPasswords(pw.value, cpw.value)' formControlName="password" >
+               
+        <div class="text-danger" *ngIf='!passwordsMatching && isConfirmPasswordDirty'>
+          Passwords did not match
+      </div>
+    </div>
+              <div class="text-center"><button type="submit"  class="btn btn-color px-5 mt-3 w-100">Register</button></div>
+              <div  class="form-text text-center mb-3  text-dark">
+                 <a routerLink="/login" class="text-dark fw-bold">Already Registered?
+                  Login</a>
+              </div>
+
+             
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
